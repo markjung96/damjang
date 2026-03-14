@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Mountain, Users, TrendingUp } from "lucide-react";
 
 const features = [
   {
@@ -9,39 +10,21 @@ const features = [
     keywordEn: "Challenge",
     description:
       "쉬운 문제부터 최고 난이도까지, 자신만의 속도로 벽을 오르세요. 매 순간이 새로운 도전입니다.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <path d="M20 4 L36 36 L4 36 Z" stroke="var(--color-primary)" strokeWidth="1.5" />
-        <path d="M20 14 L28 30 L12 30 Z" stroke="var(--color-primary)" strokeWidth="1" opacity="0.5" />
-      </svg>
-    ),
+    icon: <Mountain className="w-8 h-8 text-[var(--color-primary)]" />,
   },
   {
     keyword: "커뮤니티",
     keywordEn: "Community",
     description:
       "같은 열정을 가진 클라이머들과 함께 성장하세요. 담장은 클라이밍을 넘어 삶을 나누는 공간입니다.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <circle cx="14" cy="16" r="6" stroke="var(--color-primary)" strokeWidth="1.5" />
-        <circle cx="26" cy="16" r="6" stroke="var(--color-primary)" strokeWidth="1.5" />
-        <path d="M4 36 C4 28 10 24 14 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M36 36 C36 28 30 24 26 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M14 24 C17 22 23 22 26 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+    icon: <Users className="w-8 h-8 text-[var(--color-primary)]" />,
   },
   {
     keyword: "성장",
     keywordEn: "Growth",
     description:
       "체계적인 프로그램과 전문 코치의 지도 아래 실력이 눈에 띄게 성장하는 경험을 하게 됩니다.",
-    icon: (
-      <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <polyline points="4,32 12,20 20,26 30,10 36,16" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <polyline points="28,10 36,10 36,18" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    icon: <TrendingUp className="w-8 h-8 text-[var(--color-primary)]" />,
   },
 ];
 

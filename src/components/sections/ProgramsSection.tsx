@@ -3,7 +3,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { Mountain, BookOpen, Dumbbell, Trophy, type LucideIcon } from "lucide-react";
 import { programs } from "@/data/site";
+
+const iconMap: Record<string, LucideIcon> = {
+  mountain: Mountain,
+  "book-open": BookOpen,
+  dumbbell: Dumbbell,
+  trophy: Trophy,
+};
 
 function ProgramCard({
   program,
@@ -23,7 +31,12 @@ function ProgramCard({
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: (index % 4) * 0.1 }}
     >
-      <div className="text-3xl mb-4">{program.icon}</div>
+      <div className="mb-4">
+        {(() => {
+          const Icon = iconMap[program.icon];
+          return Icon ? <Icon className="w-8 h-8 text-[var(--color-primary)]" /> : null;
+        })()}
+      </div>
       <p className="text-[var(--color-primary)] text-xs tracking-[0.2em] uppercase font-medium mb-2">
         {program.subtitle}
       </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Lightbulb } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import { pricing } from "@/data/site";
 
@@ -30,7 +31,7 @@ export default function PricingPage() {
             transition={{ duration: 0.5 }}
             className="bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30 rounded-2xl px-7 py-5 flex gap-4 items-start"
           >
-            <span className="text-[var(--color-accent)] text-xl mt-0.5">💡</span>
+            <Lightbulb className="w-5 h-5 text-[var(--color-accent)] mt-0.5 shrink-0" />
             <p className="text-sm font-medium text-[var(--color-text)] leading-relaxed">
               <span className="font-bold text-[var(--color-accent)]">첫 방문 시 원데이 클래스를 추천합니다.</span>
               {" "}기본 안전 교육과 장비 대여가 포함되어 있어 처음 클라이밍을 시작하는 분들께 최적입니다.

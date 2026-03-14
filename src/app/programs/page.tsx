@@ -1,8 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Mountain, BookOpen, Dumbbell, Trophy, type LucideIcon } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import { programs, locations } from "@/data/site";
+
+const iconMap: Record<string, LucideIcon> = {
+  mountain: Mountain,
+  "book-open": BookOpen,
+  dumbbell: Dumbbell,
+  trophy: Trophy,
+};
 
 export default function ProgramsPage() {
   const kakaoUrl = locations[0].kakao;
@@ -23,12 +31,11 @@ export default function ProgramsPage() {
               className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-8 lg:p-10"
             >
               <div className="flex items-start gap-6">
-                <span
-                  className="text-4xl lg:text-5xl shrink-0"
-                  role="img"
-                  aria-label={program.title}
-                >
-                  {program.icon}
+                <span className="shrink-0">
+                  {(() => {
+                    const Icon = iconMap[program.icon];
+                    return Icon ? <Icon className="w-10 h-10 lg:w-12 lg:h-12 text-[var(--color-primary)]" /> : null;
+                  })()}
                 </span>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-baseline gap-3 mb-2">
