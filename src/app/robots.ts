@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://damjang.vercel.app/sitemap.xml",
+    sitemap: "https://담장.com/sitemap.xml",
   };
 }

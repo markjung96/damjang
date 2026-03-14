@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     icon: "/images/logo.png",
     apple: "/images/logo.png",
   },
-  metadataBase: new URL("https://damjang.vercel.app"),
+  metadataBase: new URL("https://담장.com"),
   openGraph: {
     title: "담장 클라이밍 | DAMJANG CLIMBING",
     description: siteConfig.description,
-    url: "https://damjang.vercel.app",
+    url: "https://담장.com",
     siteName: "담장 클라이밍",
     locale: "ko_KR",
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://damjang.vercel.app",
+    canonical: "https://담장.com",
   },
 };
 

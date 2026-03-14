@@ -6,9 +6,9 @@ export default function JsonLd() {
     "@type": "SportsActivityLocation",
     name: siteConfig.name,
     description: siteConfig.description,
-    url: "https://damjang.vercel.app",
-    logo: "https://damjang.vercel.app/images/logo.png",
-    image: "https://damjang.vercel.app/images/logo.png",
+    url: "https://담장.com",
+    logo: "https://담장.com/images/logo.png",
+    image: "https://담장.com/images/logo.png",
     sameAs: [
       locations[0].instagram,
       locations[1].instagram,
