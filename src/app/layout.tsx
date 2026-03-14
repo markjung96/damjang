@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "담장 클라이밍 | DAMJANG CLIMBING",
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     title: "담장 클라이밍 | DAMJANG CLIMBING",
     description: siteConfig.description,

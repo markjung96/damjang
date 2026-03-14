@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { navigation, locations } from "@/data/site";
 
 export default function Header() {
@@ -26,7 +27,7 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
-  const kakaoUrl = locations[0].kakao;
+  const naverUrl = locations[0].naver;
 
   return (
     <>
@@ -40,21 +41,32 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-baseline gap-2 group">
-              <span
-                className={`text-2xl lg:text-3xl font-black tracking-tight transition-colors duration-300 ${
-                  scrolled ? "text-[var(--color-primary)]" : "text-white"
+            <Link href="/" className="flex items-center gap-2 group">
+              <Image
+                src="/images/logo.png"
+                alt="담장 클라이밍"
+                width={40}
+                height={40}
+                className={`h-8 w-8 lg:h-10 lg:w-10 object-contain transition-all duration-300 ${
+                  scrolled ? "" : "brightness-0 invert"
                 }`}
-              >
-                담장
-              </span>
-              <span
-                className={`text-xs lg:text-sm font-semibold tracking-[0.2em] transition-colors duration-300 ${
-                  scrolled ? "text-[var(--color-muted)]" : "text-white/70"
-                }`}
-              >
-                CLIMBING
-              </span>
+              />
+              <div className="flex items-baseline gap-1.5">
+                <span
+                  className={`text-xl lg:text-2xl font-black tracking-tight transition-colors duration-300 ${
+                    scrolled ? "text-[var(--color-primary)]" : "text-white"
+                  }`}
+                >
+                  담장
+                </span>
+                <span
+                  className={`text-[10px] lg:text-xs font-semibold tracking-[0.2em] transition-colors duration-300 ${
+                    scrolled ? "text-[var(--color-muted)]" : "text-white/70"
+                  }`}
+                >
+                  CLIMBING
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -75,7 +87,7 @@ export default function Header() {
             {/* CTA + Mobile Toggle */}
             <div className="flex items-center gap-3">
               <a
-                href={kakaoUrl}
+                href={naverUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold text-white bg-[var(--color-primary)] hover:bg-[var(--color-accent)] transition-colors duration-200"
@@ -135,7 +147,14 @@ export default function Header() {
       >
         {/* Panel Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--color-border)]">
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt="담장"
+              width={32}
+              height={32}
+              className="h-7 w-7 object-contain"
+            />
             <span className="text-xl font-black text-[var(--color-primary)]">담장</span>
             <span className="text-xs font-semibold tracking-[0.2em] text-[var(--color-muted)]">
               CLIMBING
@@ -173,13 +192,13 @@ export default function Header() {
         {/* Panel Footer CTA */}
         <div className="px-4 pb-8 pt-4 border-t border-[var(--color-border)]">
           <a
-            href={kakaoUrl}
+            href={naverUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold text-white bg-[var(--color-primary)] hover:bg-[var(--color-accent)] transition-colors duration-200"
           >
-            카카오톡으로 예약하기
+            네이버 예약하기
           </a>
         </div>
       </div>

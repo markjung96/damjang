@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#6B1C1C"/>
+  <path d="M80 120 L80 340 L160 400 L360 400 L432 340 L432 120 L360 80 L160 80 Z" fill="white"/>
+  <text x="256" y="290" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="160" fill="#6B1C1C">담장</text>
+</svg>

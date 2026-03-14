@@ -84,7 +84,7 @@ export const programs = [
       "클라이밍이 처음인 분들을 위한 체험 프로그램. 기본 안전 교육부터 쉬운 문제 도전까지, 전문 강사가 1:1로 안내합니다.",
     duration: "약 2시간",
     includes: ["기본 안전 교육", "장비 대여", "기초 테크닉 강습", "자유 클라이밍"],
-    icon: "🧗",
+    icon: "mountain",
   },
   {
     id: "beginner",
@@ -94,7 +94,7 @@ export const programs = [
       "볼더링의 기본기를 체계적으로 배우는 과정. 풋워크, 밸런스, 기본 무브를 익힙니다.",
     duration: "주 2회 / 4주",
     includes: ["풋워크 트레이닝", "기본 무브 학습", "밸런스 훈련", "문제 해석 기초"],
-    icon: "📚",
+    icon: "book-open",
   },
   {
     id: "intermediate",
@@ -109,7 +109,7 @@ export const programs = [
       "루트 리딩",
       "체력 및 지구력 훈련",
     ],
-    icon: "💪",
+    icon: "dumbbell",
   },
   {
     id: "advanced",
@@ -119,7 +119,7 @@ export const programs = [
       "고난이도 문제에 도전하는 상급 클라이머를 위한 클리닉. 개인별 맞춤 피드백과 약점 보완 훈련을 제공합니다.",
     duration: "주 2회 / 4주",
     includes: ["개인별 약점 분석", "고급 테크닉", "멘탈 트레이닝", "대회 준비"],
-    icon: "🏆",
+    icon: "trophy",
   },
 ] as const;
 
