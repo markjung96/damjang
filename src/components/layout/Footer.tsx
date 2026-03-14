@@ -139,15 +139,25 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Kakao CTA */}
-            <a
-              href={locations[0].kakao}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 px-4 py-2.5 rounded-full text-sm font-semibold text-white border border-[var(--color-accent)] hover:bg-[var(--color-accent)] transition-colors duration-200"
-            >
-              카카오톡 채널
-            </a>
+            {/* CTA Links */}
+            <div className="flex flex-col gap-2 mt-6">
+              <a
+                href={locations[0].kakao}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white border border-[var(--color-accent)] hover:bg-[var(--color-accent)] transition-colors duration-200 w-fit"
+              >
+                카카오톡 채널
+              </a>
+              <a
+                href={locations[0].naver}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white border border-[#03C75A] hover:bg-[#03C75A] transition-colors duration-200 w-fit"
+              >
+                네이버 예약
+              </a>
+            </div>
           </div>
         </div>
       </div>

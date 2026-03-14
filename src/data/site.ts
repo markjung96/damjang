@@ -15,6 +15,7 @@ export const locations = [
     phone: "02-318-3094",
     instagram: "https://www.instagram.com/euljiro_damjang/",
     kakao: "https://pf.kakao.com/_dmVyb",
+    naver: "https://naver.me/GI3Jij4T",
     hours: {
       weekday: "11:00 - 23:00",
       saturday: "10:00 - 19:00",
@@ -33,6 +34,7 @@ export const locations = [
     phone: "02-313-1003",
     instagram: "https://www.instagram.com/sinchon_damjang/",
     kakao: "https://pf.kakao.com/_dmVyb",
+    naver: "https://naver.me/GI3Jij4T",
     hours: {
       weekday: "11:00 - 23:00",
       saturday: "10:00 - 19:00",

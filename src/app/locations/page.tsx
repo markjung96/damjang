@@ -124,6 +124,14 @@ export default function LocationsPage() {
                     >
                       카카오 채널
                     </a>
+                    <a
+                      href={location.naver}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#03C75A] text-sm font-medium text-white hover:bg-[#02b351] transition-colors"
+                    >
+                      네이버 예약
+                    </a>
                   </div>
                 </div>
 

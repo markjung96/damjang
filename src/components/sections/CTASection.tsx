@@ -9,6 +9,7 @@ export default function CTASection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const kakaoLink = locations[0].kakao;
+  const naverLink = locations[0].naver;
   const phone = locations[0].phone;
 
   return (
@@ -68,6 +69,14 @@ export default function CTASection() {
                 <path d="M12 3C6.477 3 2 6.477 2 10.5c0 2.636 1.574 4.942 3.938 6.312L5 20l3.965-2.073C9.917 18.28 10.944 18.5 12 18.5c5.523 0 10-3.477 10-7.5S17.523 3 12 3z" />
               </svg>
               카카오 채널 문의
+            </a>
+            <a
+              href={naverLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#03C75A] text-white font-semibold tracking-wide hover:bg-[#02b351] transition-colors duration-200"
+            >
+              네이버 예약
             </a>
             <a
               href={`tel:${phone}`}
