@@ -18,20 +18,20 @@ function ProgramCard({
   return (
     <motion.div
       ref={ref}
-      className="group border border-[#E5E5E5] bg-[#FAFAFA] p-8 hover:border-[#FF6B35] hover:bg-white transition-all duration-300"
+      className="group border border-[var(--color-border)] bg-[var(--color-warm-50)] p-8 hover:border-[var(--color-primary)] hover:bg-[var(--color-surface)] hover:shadow-[var(--shadow-md)] transition-all duration-300 rounded-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: (index % 4) * 0.1 }}
     >
       <div className="text-3xl mb-4">{program.icon}</div>
-      <p className="text-[#FF6B35] text-xs tracking-[0.2em] uppercase font-medium mb-2">
+      <p className="text-[var(--color-primary)] text-xs tracking-[0.2em] uppercase font-medium mb-2">
         {program.subtitle}
       </p>
-      <h3 className="text-xl font-black text-[#1A1A1A] mb-3">{program.title}</h3>
-      <p className="text-[#666] text-sm leading-relaxed mb-4 line-clamp-3">
+      <h3 className="text-xl font-black text-[var(--color-text)] mb-3">{program.title}</h3>
+      <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4 line-clamp-3">
         {program.description}
       </p>
-      <p className="text-xs text-[#999] mb-4">{program.duration}</p>
+      <p className="text-xs text-[var(--color-muted)] mb-4">{program.duration}</p>
     </motion.div>
   );
 }
@@ -43,7 +43,7 @@ export default function ProgramsSection() {
   const ctaInView = useInView(ctaRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 bg-[#FAFAFA]">
+    <section className="py-32 bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={titleRef}
@@ -53,16 +53,16 @@ export default function ProgramsSection() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="text-[#FF6B35] text-xs tracking-[0.4em] uppercase font-medium mb-4">
+            <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">
               Programs
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-text)] leading-tight">
               당신의 레벨에<br />맞는 프로그램
             </h2>
           </div>
           <Link
             href="/programs"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#FF6B35] transition-colors duration-200 self-start lg:self-auto"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors duration-200 self-start lg:self-auto"
           >
             전체 프로그램 보기
             <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
@@ -92,7 +92,7 @@ export default function ProgramsSection() {
         >
           <Link
             href="/programs"
-            className="inline-block px-8 py-4 bg-[#1A1A1A] text-white font-semibold tracking-wide hover:bg-[#FF6B35] transition-colors duration-200"
+            className="inline-block px-8 py-4 bg-[var(--color-primary)] text-white font-semibold tracking-wide hover:bg-[var(--color-accent)] transition-colors duration-200 rounded-sm"
           >
             프로그램 자세히 보기
           </Link>

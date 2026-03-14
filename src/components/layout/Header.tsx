@@ -63,7 +63,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--color-accent)] ${
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--color-primary)] ${
                     scrolled ? "text-[var(--color-text)]" : "text-white/90"
                   }`}
                 >
@@ -78,7 +78,7 @@ export default function Header() {
                 href={kakaoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold text-white bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] transition-colors duration-200"
+                className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold text-white bg-[var(--color-primary)] hover:bg-[var(--color-accent)] transition-colors duration-200"
               >
                 예약하기
               </a>
@@ -161,7 +161,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-3 py-3 rounded-lg text-base font-medium text-[var(--color-text)] hover:bg-[var(--color-background)] hover:text-[var(--color-accent)] transition-colors duration-150"
+                  className="flex items-center px-3 py-3 rounded-lg text-base font-medium text-[var(--color-text)] hover:bg-[var(--color-warm-100)] hover:text-[var(--color-primary)] transition-colors duration-150"
                 >
                   {item.name}
                 </Link>
@@ -177,7 +177,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold text-white bg-[var(--color-accent)] hover:bg-[var(--color-accent-dark)] transition-colors duration-200"
+            className="flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold text-white bg-[var(--color-primary)] hover:bg-[var(--color-accent)] transition-colors duration-200"
           >
             카카오톡으로 예약하기
           </a>

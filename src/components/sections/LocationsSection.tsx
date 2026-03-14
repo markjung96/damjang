@@ -18,39 +18,39 @@ function LocationCard({
   return (
     <motion.div
       ref={ref}
-      className="group border border-[#E5E5E5] bg-white p-10 hover:border-[#FF6B35] transition-all duration-300 relative overflow-hidden"
+      className="group border border-[var(--color-border)] bg-[var(--color-surface)] p-10 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 relative overflow-hidden rounded-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       {/* Accent corner */}
-      <div className="absolute top-0 right-0 w-16 h-16 bg-[#FF6B35] opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+      <div className="absolute top-0 right-0 w-16 h-16 bg-[var(--color-primary)] opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
 
       <div className="mb-6">
-        <p className="text-[#FF6B35] text-xs tracking-[0.3em] uppercase font-medium mb-2">
+        <p className="text-[var(--color-primary)] text-xs tracking-[0.3em] uppercase font-medium mb-2">
           {location.nameEn}
         </p>
-        <h3 className="text-3xl font-black text-[#1A1A1A]">{location.name}</h3>
+        <h3 className="text-3xl font-black text-[var(--color-text)]">{location.name}</h3>
       </div>
 
-      <p className="text-[#666] text-sm leading-relaxed mb-6">{location.description}</p>
+      <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6">{location.description}</p>
 
       <div className="space-y-3 mb-8">
         <div className="flex gap-4 text-sm">
-          <span className="text-[#999] w-16 shrink-0">주소</span>
-          <span className="text-[#333]">{location.address}</span>
+          <span className="text-[var(--color-muted)] w-16 shrink-0">주소</span>
+          <span className="text-[var(--color-text)]">{location.address}</span>
         </div>
         <div className="flex gap-4 text-sm">
-          <span className="text-[#999] w-16 shrink-0">평일</span>
-          <span className="text-[#333]">{location.hours.weekday}</span>
+          <span className="text-[var(--color-muted)] w-16 shrink-0">평일</span>
+          <span className="text-[var(--color-text)]">{location.hours.weekday}</span>
         </div>
         <div className="flex gap-4 text-sm">
-          <span className="text-[#999] w-16 shrink-0">토요일</span>
-          <span className="text-[#333]">{location.hours.saturday}</span>
+          <span className="text-[var(--color-muted)] w-16 shrink-0">토요일</span>
+          <span className="text-[var(--color-text)]">{location.hours.saturday}</span>
         </div>
         <div className="flex gap-4 text-sm">
-          <span className="text-[#999] w-16 shrink-0">일요일</span>
-          <span className="text-[#333]">{location.hours.sunday}</span>
+          <span className="text-[var(--color-muted)] w-16 shrink-0">일요일</span>
+          <span className="text-[var(--color-text)]">{location.hours.sunday}</span>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ function LocationCard({
         {location.features.map((feature) => (
           <span
             key={feature}
-            className="text-xs px-3 py-1 bg-[#F5F5F5] text-[#666] tracking-wide"
+            className="text-xs px-3 py-1.5 bg-[var(--color-warm-100)] text-[var(--color-text-secondary)] tracking-wide rounded-sm"
           >
             {feature}
           </span>
@@ -67,7 +67,7 @@ function LocationCard({
 
       <Link
         href={`/locations#${location.id}`}
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] group-hover:text-[#FF6B35] transition-colors duration-200"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors duration-200"
       >
         자세히 보기
         <svg
@@ -93,7 +93,7 @@ export default function LocationsSection() {
   const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-[var(--color-surface)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={titleRef}
@@ -102,10 +102,10 @@ export default function LocationsSection() {
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#FF6B35] text-xs tracking-[0.4em] uppercase font-medium mb-4">
+          <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">
             Locations
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-text)] leading-tight">
             두 개의 공간,<br />하나의 담장
           </h2>
         </motion.div>
