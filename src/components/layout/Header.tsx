@@ -47,9 +47,7 @@ export default function Header() {
                 alt="담장 클라이밍"
                 width={40}
                 height={40}
-                className={`h-8 w-8 lg:h-10 lg:w-10 object-contain transition-all duration-300 ${
-                  scrolled ? "" : "brightness-0 invert"
-                }`}
+                className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
               />
               <div className="flex items-baseline gap-1.5">
                 <span
@@ -75,8 +73,10 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--color-primary)] ${
-                    scrolled ? "text-[var(--color-text)]" : "text-white/90"
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    scrolled
+                      ? "text-[var(--color-text)] hover:text-[var(--color-primary)]"
+                      : "text-white/90 hover:text-white"
                   }`}
                 >
                   {item.name}

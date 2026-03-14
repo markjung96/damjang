@@ -1,13 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { locations } from "@/data/site";
 
 export default function CTASection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   const kakaoLink = locations[0].kakao;
   const naverLink = locations[0].naver;
   const phone = locations[0].phone;
@@ -32,10 +28,10 @@ export default function CTASection() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div
-          ref={ref}
           className="max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <p className="text-[var(--color-accent-light)] text-xs tracking-[0.4em] uppercase font-medium mb-6">
@@ -56,7 +52,8 @@ export default function CTASection() {
           <motion.div
             className="flex flex-col sm:flex-row gap-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <a

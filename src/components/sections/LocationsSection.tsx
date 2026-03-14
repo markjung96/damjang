@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { locations } from "@/data/site";
 
@@ -12,15 +11,12 @@ function LocationCard({
   location: (typeof locations)[number];
   index: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <motion.div
-      ref={ref}
       className="group border border-[var(--color-border)] bg-[var(--color-surface)] p-10 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 relative overflow-hidden rounded-sm"
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       {/* Accent corner */}
@@ -89,17 +85,14 @@ function LocationCard({
 }
 
 export default function LocationsSection() {
-  const titleRef = useRef(null);
-  const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
-
   return (
     <section className="py-32 bg-[var(--color-surface)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          ref={titleRef}
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={titleInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">

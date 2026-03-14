@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const placeholders = [
@@ -14,19 +13,14 @@ const placeholders = [
 ];
 
 export default function GalleryPreviewSection() {
-  const titleRef = useRef(null);
-  const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
-  const gridRef = useRef(null);
-  const gridInView = useInView(gridRef, { once: true, margin: "-80px" });
-
   return (
     <section className="py-32 bg-[var(--color-warm-50)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          ref={titleRef}
           className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
           initial={{ opacity: 0, y: 20 }}
-          animate={titleInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <div>
@@ -55,10 +49,10 @@ export default function GalleryPreviewSection() {
         </motion.div>
 
         <motion.div
-          ref={gridRef}
           className="grid grid-cols-2 md:grid-cols-3 gap-3"
           initial={{ opacity: 0, y: 20 }}
-          animate={gridInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           {placeholders.map((item, index) => (
@@ -66,7 +60,8 @@ export default function GalleryPreviewSection() {
               key={item.label}
               className="group relative aspect-[4/3] bg-[var(--color-primary-dark)] overflow-hidden cursor-pointer rounded-sm"
               initial={{ opacity: 0 }}
-              animate={gridInView ? { opacity: 1 } : {}}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
             >
               {/* Subtle texture pattern */}
@@ -103,8 +98,9 @@ export default function GalleryPreviewSection() {
         <motion.div
           className="mt-8 text-center"
           initial={{ opacity: 0 }}
-          animate={gridInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Link
             href="/gallery"

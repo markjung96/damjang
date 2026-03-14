@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mountain, BookOpen, Dumbbell, Trophy, type LucideIcon } from "lucide-react";
 import { programs } from "@/data/site";
@@ -20,15 +19,12 @@ function ProgramCard({
   program: (typeof programs)[number];
   index: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <motion.div
-      ref={ref}
       className="group border border-[var(--color-border)] bg-[var(--color-warm-50)] p-8 hover:border-[var(--color-primary)] hover:bg-[var(--color-surface)] hover:shadow-[var(--shadow-md)] transition-all duration-300 rounded-sm"
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay: (index % 4) * 0.1 }}
     >
       <div className="mb-4">
@@ -50,19 +46,14 @@ function ProgramCard({
 }
 
 export default function ProgramsSection() {
-  const titleRef = useRef(null);
-  const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, margin: "-80px" });
-
   return (
     <section className="py-32 bg-[var(--color-background)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          ref={titleRef}
           className="mb-16 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
           initial={{ opacity: 0, y: 20 }}
-          animate={titleInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <div>
@@ -97,10 +88,10 @@ export default function ProgramsSection() {
         </div>
 
         <motion.div
-          ref={ctaRef}
           className="mt-12 text-center"
           initial={{ opacity: 0, y: 20 }}
-          animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <Link

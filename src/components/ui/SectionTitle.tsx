@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface SectionTitleProps {
   label: string;
@@ -18,15 +18,12 @@ export default function SectionTitle({
   align = "left",
   className = "",
 }: SectionTitleProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <motion.div
-      ref={ref}
       className={`mb-16 ${align === "center" ? "text-center" : ""} ${className}`}
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6 }}
     >
       <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">

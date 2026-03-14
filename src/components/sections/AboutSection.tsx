@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { Mountain, Users, TrendingUp } from "lucide-react";
 
 const features = [
@@ -35,15 +34,12 @@ function FeatureCard({
   feature: (typeof features)[number];
   index: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <motion.div
-      ref={ref}
       className="bg-[var(--color-surface)] border border-[var(--color-border)] p-8 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-md)] transition-all duration-300 group rounded-sm"
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       <div className="mb-4">{feature.icon}</div>
@@ -57,17 +53,14 @@ function FeatureCard({
 }
 
 export default function AboutSection() {
-  const titleRef = useRef(null);
-  const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
-
   return (
     <section className="py-32 bg-[var(--color-warm-50)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
-          ref={titleRef}
           className="mb-20 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
-          animate={titleInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
           <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">
