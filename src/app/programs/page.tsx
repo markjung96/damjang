@@ -81,19 +81,19 @@ export default function ProgramsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto mt-16 bg-[#1A1A1A] rounded-3xl p-10 text-center"
+          className="max-w-4xl mx-auto mt-16 bg-[var(--color-primary)] rounded-2xl p-10 text-center"
         >
           <h3 className="text-2xl font-black text-white mb-3">
             프로그램 예약 및 문의
           </h3>
-          <p className="text-sm text-white/60 mb-8">
+          <p className="text-sm text-white/70 mb-8">
             카카오톡 채널로 편하게 문의해주세요. 빠르게 답변드립니다.
           </p>
           <a
             href={kakaoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FEE500] text-[#3A1D1D] font-bold rounded-full text-sm hover:bg-[#F5DC00] transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#FEE500] text-[var(--color-text)] font-bold rounded-full text-sm hover:bg-[#F5DC00] transition-colors"
           >
             카카오톡으로 예약하기
           </a>

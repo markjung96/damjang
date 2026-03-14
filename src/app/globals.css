@@ -2,16 +2,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1A1A1A;
-  --color-accent: #FF6B35;
-  --color-accent-dark: #E55A2B;
-  --color-background: #FAFAFA;
+  /* Brand Primary - Maroon/Burgundy from DAM JANG Logo */
+  --color-primary: #6B1C1C;
+  --color-primary-light: #8B2E2E;
+  --color-primary-dark: #4A1313;
+  --color-primary-muted: rgba(107, 28, 28, 0.1);
+  
+  /* Brand Secondary - Warm Accent */
+  --color-accent: #D4483B;
+  --color-accent-light: #E86B5E;
+  --color-accent-dark: #B33A2E;
+  --color-accent-muted: rgba(212, 72, 59, 0.1);
+  
+  /* Neutral Palette */
+  --color-background: #FAFAF8;
   --color-surface: #FFFFFF;
-  --color-text: #333333;
-  --color-muted: #999999;
+  --color-surface-dark: #1F1F1F;
+  --color-text: #1F1F1F;
+  --color-text-secondary: #4A4A4A;
+  --color-muted: #7A7A7A;
+  --color-text-on-primary: #FFFFFF;
   --color-border: #E5E5E5;
+  --color-border-light: #F0F0F0;
+  
+  /* Warm Neutral Tints (complementing maroon) */
+  --color-warm-50: #FDF8F6;
+  --color-warm-100: #F5EBE6;
+  --color-warm-200: #EAD5CC;
+  
+  /* Semantic Colors */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  
+  /* Shadows with warm undertone */
+  --shadow-sm: 0 1px 2px rgba(107, 28, 28, 0.05);
+  --shadow-md: 0 4px 6px rgba(107, 28, 28, 0.08);
+  --shadow-lg: 0 10px 25px rgba(107, 28, 28, 0.12);
+  --shadow-xl: 0 20px 40px rgba(107, 28, 28, 0.15);
 
+  /* Typography */
   --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
 }
 
 html {
@@ -27,6 +65,24 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: white;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -11,8 +11,8 @@ const features = [
       "쉬운 문제부터 최고 난이도까지, 자신만의 속도로 벽을 오르세요. 매 순간이 새로운 도전입니다.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <path d="M20 4 L36 36 L4 36 Z" stroke="#FF6B35" strokeWidth="1.5" />
-        <path d="M20 14 L28 30 L12 30 Z" stroke="#FF6B35" strokeWidth="1" opacity="0.5" />
+        <path d="M20 4 L36 36 L4 36 Z" stroke="var(--color-primary)" strokeWidth="1.5" />
+        <path d="M20 14 L28 30 L12 30 Z" stroke="var(--color-primary)" strokeWidth="1" opacity="0.5" />
       </svg>
     ),
   },
@@ -23,11 +23,11 @@ const features = [
       "같은 열정을 가진 클라이머들과 함께 성장하세요. 담장은 클라이밍을 넘어 삶을 나누는 공간입니다.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <circle cx="14" cy="16" r="6" stroke="#FF6B35" strokeWidth="1.5" />
-        <circle cx="26" cy="16" r="6" stroke="#FF6B35" strokeWidth="1.5" />
-        <path d="M4 36 C4 28 10 24 14 24" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M36 36 C36 28 30 24 26 24" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M14 24 C17 22 23 22 26 24" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="14" cy="16" r="6" stroke="var(--color-primary)" strokeWidth="1.5" />
+        <circle cx="26" cy="16" r="6" stroke="var(--color-primary)" strokeWidth="1.5" />
+        <path d="M4 36 C4 28 10 24 14 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M36 36 C36 28 30 24 26 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M14 24 C17 22 23 22 26 24" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -38,8 +38,8 @@ const features = [
       "체계적인 프로그램과 전문 코치의 지도 아래 실력이 눈에 띄게 성장하는 경험을 하게 됩니다.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" className="w-8 h-8">
-        <polyline points="4,32 12,20 20,26 30,10 36,16" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <polyline points="28,10 36,10 36,18" stroke="#FF6B35" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="4,32 12,20 20,26 30,10 36,16" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="28,10 36,10 36,18" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -58,17 +58,17 @@ function FeatureCard({
   return (
     <motion.div
       ref={ref}
-      className="bg-white border border-[#E5E5E5] p-8 hover:border-[#FF6B35] transition-colors duration-300 group"
+      className="bg-[var(--color-surface)] border border-[var(--color-border)] p-8 hover:border-[var(--color-primary)] hover:shadow-[var(--shadow-md)] transition-all duration-300 group rounded-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.15 }}
     >
       <div className="mb-4">{feature.icon}</div>
-      <h3 className="text-2xl font-black text-[#1A1A1A] mb-1">{feature.keyword}</h3>
-      <p className="text-xs text-[#FF6B35] tracking-[0.2em] uppercase mb-4">
+      <h3 className="text-2xl font-black text-[var(--color-text)] mb-1">{feature.keyword}</h3>
+      <p className="text-xs text-[var(--color-primary)] tracking-[0.2em] uppercase mb-4">
         {feature.keywordEn}
       </p>
-      <p className="text-[#666] leading-relaxed text-sm">{feature.description}</p>
+      <p className="text-[var(--color-text-secondary)] leading-relaxed text-sm">{feature.description}</p>
     </motion.div>
   );
 }
@@ -78,7 +78,7 @@ export default function AboutSection() {
   const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 bg-[#FAFAFA]">
+    <section className="py-32 bg-[var(--color-warm-50)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={titleRef}
@@ -87,18 +87,18 @@ export default function AboutSection() {
           animate={titleInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#FF6B35] text-xs tracking-[0.4em] uppercase font-medium mb-4">
+          <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">
             About
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-tight mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-text)] leading-tight mb-6">
             ABOUT<br />DAMJANG
           </h2>
-          <p className="text-[#666] leading-relaxed">
+          <p className="text-[var(--color-text-secondary)] leading-relaxed">
             담장은 을지로의 오래된 골목길에서 시작된 클라이밍 짐입니다. 산업적인 공간에
             따뜻한 커뮤니티를 담아, 처음 오는 분부터 오랜 클라이머까지 모두가 자신만의
             이야기를 쌓아가는 곳입니다.
           </p>
-          <p className="text-[#666] leading-relaxed mt-4">
+          <p className="text-[var(--color-text-secondary)] leading-relaxed mt-4">
             벽을 오른다는 것은 단순한 운동이 아닙니다. 스스로의 한계를 마주하고, 다시
             도전하고, 결국 해내는 과정 — 그것이 담장이 추구하는 클라이밍 문화입니다.
           </p>

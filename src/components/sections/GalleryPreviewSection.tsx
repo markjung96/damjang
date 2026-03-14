@@ -20,7 +20,7 @@ export default function GalleryPreviewSection() {
   const gridInView = useInView(gridRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-[var(--color-warm-50)]">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           ref={titleRef}
@@ -30,16 +30,16 @@ export default function GalleryPreviewSection() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="text-[#FF6B35] text-xs tracking-[0.4em] uppercase font-medium mb-4">
+            <p className="text-[var(--color-primary)] text-xs tracking-[0.4em] uppercase font-medium mb-4">
               Gallery
             </p>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-black text-[var(--color-text)] leading-tight">
               담장의 공간
             </h2>
           </div>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#1A1A1A] hover:text-[#FF6B35] transition-colors duration-200 self-start sm:self-auto"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors duration-200 self-start sm:self-auto"
           >
             갤러리 전체 보기
             <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
@@ -64,7 +64,7 @@ export default function GalleryPreviewSection() {
           {placeholders.map((item, index) => (
             <motion.div
               key={item.label}
-              className="group relative aspect-[4/3] bg-[#2A2A2A] overflow-hidden cursor-pointer"
+              className="group relative aspect-[4/3] bg-[var(--color-primary-dark)] overflow-hidden cursor-pointer rounded-sm"
               initial={{ opacity: 0 }}
               animate={gridInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
@@ -74,12 +74,12 @@ export default function GalleryPreviewSection() {
                 className="absolute inset-0 opacity-20"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(45deg, #3A3A3A 0px, #3A3A3A 1px, transparent 1px, transparent 8px)",
+                    "repeating-linear-gradient(45deg, var(--color-primary) 0px, var(--color-primary) 1px, transparent 1px, transparent 8px)",
                 }}
               />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-[#FF6B35]/0 group-hover:bg-[#FF6B35]/20 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-[var(--color-primary)]/0 group-hover:bg-[var(--color-primary)]/30 transition-colors duration-300" />
 
               {/* Label overlay */}
               <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -108,7 +108,7 @@ export default function GalleryPreviewSection() {
         >
           <Link
             href="/gallery"
-            className="inline-block px-8 py-4 border border-[#1A1A1A] text-[#1A1A1A] font-semibold tracking-wide hover:bg-[#1A1A1A] hover:text-white transition-all duration-200"
+            className="inline-block px-8 py-4 border border-[var(--color-primary)] text-[var(--color-primary)] font-semibold tracking-wide hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200 rounded-sm"
           >
             갤러리
           </Link>
