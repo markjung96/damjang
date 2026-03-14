@@ -30,18 +30,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
-        width: 512,
-        height: 512,
-        alt: "담장 클라이밍 로고",
+        url: "/images/og.png",
+        width: 1200,
+        height: 630,
+        alt: "담장 클라이밍 - DAM JANG CLIMBING",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "담장 클라이밍 | DAMJANG CLIMBING",
     description: siteConfig.description,
-    images: ["/images/logo.png"],
+    images: ["/images/og.png"],
   },
   robots: {
     index: true,
