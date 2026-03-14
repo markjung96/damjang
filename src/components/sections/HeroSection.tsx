@@ -5,41 +5,40 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--color-primary)]">
-      {/* Background geometric pattern with brand colors */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#1A1A1A]">
+      {/* Background geometric pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Speech bubble inspired pattern from logo */}
         <svg
-          className="absolute top-0 right-0 w-2/3 h-full opacity-[0.06]"
+          className="absolute top-0 right-0 w-1/2 h-full opacity-[0.04]"
           viewBox="0 0 600 800"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Speech bubble shape inspired by logo */}
-          <path d="M100,100 L500,100 L500,500 L400,500 L350,600 L300,500 L100,500 Z" stroke="white" strokeWidth="2" fill="none" />
-          <path d="M150,150 L450,150 L450,450 L375,450 L325,530 L275,450 L150,450 Z" stroke="white" strokeWidth="1" fill="none" opacity="0.5" />
-          <circle cx="400" cy="200" r="80" stroke="var(--color-accent)" strokeWidth="1" />
-          <line x1="150" y1="250" x2="400" y2="250" stroke="white" strokeWidth="1" />
-          <line x1="150" y1="320" x2="350" y2="320" stroke="white" strokeWidth="1" opacity="0.6" />
+          <circle cx="400" cy="200" r="300" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="200" r="200" stroke="white" strokeWidth="1" />
+          <circle cx="400" cy="200" r="100" stroke="white" strokeWidth="1" />
+          <line x1="100" y1="0" x2="600" y2="800" stroke="white" strokeWidth="1" />
+          <line x1="0" y1="200" x2="600" y2="400" stroke="white" strokeWidth="1" />
+          <rect x="300" y="400" width="200" height="200" stroke="var(--color-primary)" strokeWidth="1" transform="rotate(45 400 500)" />
         </svg>
         <svg
-          className="absolute bottom-0 left-0 w-1/3 h-1/2 opacity-[0.05]"
+          className="absolute bottom-0 left-0 w-1/3 h-1/2 opacity-[0.04]"
           viewBox="0 0 400 400"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <polygon points="0,400 200,0 400,400" stroke="white" strokeWidth="1" />
-          <polygon points="50,400 200,50 350,400" stroke="var(--color-accent)" strokeWidth="1" />
+          <polygon points="50,400 200,50 350,400" stroke="var(--color-primary)" strokeWidth="1" />
           <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeWidth="1" />
         </svg>
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-primary-dark)]/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1A1A1A]/80 pointer-events-none" />
 
-      {/* Accent line */}
+      {/* Accent line - using brand maroon */}
       <motion.div
-        className="absolute top-0 left-0 w-1.5 h-full bg-[var(--color-accent)]"
+        className="absolute top-0 left-0 w-1 h-full bg-[var(--color-primary)]"
         initial={{ scaleY: 0, originY: 0 }}
         animate={{ scaleY: 1 }}
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
@@ -48,7 +47,7 @@ export default function HeroSection() {
       {/* Main content */}
       <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <motion.p
-          className="text-[var(--color-accent-light)] text-sm tracking-[0.4em] uppercase mb-4 font-medium"
+          className="text-[var(--color-primary)] text-sm tracking-[0.4em] uppercase mb-4 font-medium"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -85,13 +84,13 @@ export default function HeroSection() {
         >
           <Link
             href="/programs"
-            className="px-8 py-4 bg-[var(--color-accent)] text-white font-semibold tracking-wide hover:bg-[var(--color-accent-dark)] transition-colors duration-200 rounded-sm"
+            className="px-8 py-4 bg-[var(--color-primary)] text-white font-semibold tracking-wide hover:bg-[var(--color-primary-light)] transition-colors duration-200"
           >
             체험 예약
           </Link>
           <Link
             href="/locations"
-            className="px-8 py-4 border border-white/40 text-white font-semibold tracking-wide hover:border-white hover:bg-white/10 transition-all duration-200 rounded-sm"
+            className="px-8 py-4 border border-white/40 text-white font-semibold tracking-wide hover:border-white hover:bg-white/5 transition-all duration-200"
           >
             지점 안내
           </Link>
